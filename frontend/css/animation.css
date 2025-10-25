@@ -1,0 +1,36 @@
+/* IMPROVED ANIMATIONS FILE
+  Add these classes to any element in your HTML to trigger the animation.
+*/
+
+/* Simple fade-in animation */
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade in and slide up animation */
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-in-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

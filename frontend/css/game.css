@@ -1,0 +1,246 @@
+/* ===== New Game Page Layout ===== */
+.game-page-layout {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1.5rem;
+  align-items: flex-start; 
+  margin-top: 80px; /* Adjust as needed for header */
+}
+
+.main-game-column {
+  flex: 3; 
+  min-width: 300px; 
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar-column {
+  flex: 1; 
+  min-width: 280px; 
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* === Game Canvas Styling === */
+.main-game-column #unity-container {
+  position: relative !important; /* Override Unity's absolute */
+  width: 100% !important; 
+  height: auto !important; 
+  aspect-ratio: 960 / 600; 
+  background: #231F20; 
+  border-radius: 10px;
+  overflow: hidden; 
+  line-height: 0; 
+  /* Remove positioning styles from Unity's default CSS */
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+}
+
+.main-game-column #unity-canvas {
+  width: 100%; 
+  height: 100%;
+  display: block; 
+  border-radius: 10px; 
+  background: #231F20; 
+}
+
+/* --- *** FOOTER FIX *** --- */
+/* Keep the footer visible for the fullscreen button, but style it minimally */
+.main-game-column #unity-footer {
+    position: absolute; /* Position relative to #unity-container */
+    bottom: 5px; /* Adjust position as needed */
+    right: 5px; /* Adjust position as needed */
+    width: auto; /* Let content determine width */
+    height: 38px; /* Match default Unity footer height */
+    display: flex; /* Use flex to align items */
+    align-items: center;
+    gap: 10px; /* Space between buttons/text */
+    /* Remove float from Unity's default styles if present */
+    float: none !important; 
+    /* Optionally hide elements you don't want */
+    /* #unity-logo-title-footer { display: none; } */
+    /* #unity-build-title { display: none; } */
+}
+/* Ensure fullscreen button is visible */
+.main-game-column #unity-fullscreen-button {
+    /* Keep Unity's default styles (size, background) */
+    cursor: pointer; 
+    width: 38px; 
+    height: 38px; 
+    /* Set background explicitly relative to root */
+    background: url('/unitygame/TemplateData/fullscreen-button.png') no-repeat center !important; 
+    float: none !important; /* Remove float */
+}
+
+
+/* --- *** LOADING BAR FIX *** --- */
+/* Style the loading bar */
+.main-game-column #unity-loading-bar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block; /* Ensure it's visible initially */
+    width: 200px; /* Adjust size as needed */
+    height: auto; /* Let content determine height */
+    text-align: center; /* Center logo and bar */
+}
+/* Ensure progress bar elements have correct background images */
+.main-game-column #unity-logo { 
+    width: 154px; 
+    height: 130px;
+    /* Explicitly set background, path relative to /frontend/ */
+    background: url('/unitygame/TemplateData/unity-logo-dark.png') no-repeat center !important; 
+    margin: 0 auto 10px auto; /* Center logo and add space below */
+ }
+.main-game-column #unity-progress-bar-empty { 
+    width: 141px; 
+    height: 18px; 
+    /* Explicitly set background */
+    background: url('/unitygame/TemplateData/progress-bar-empty-dark.png') no-repeat center !important; 
+    margin-left: auto; 
+    margin-right: auto; /* Center bar */
+    position: relative; /* Needed for full bar positioning */
+ }
+.main-game-column #unity-progress-bar-full { 
+    width: 0%; 
+    height: 18px; 
+    /* Explicitly set background */
+    background: url('/unitygame/TemplateData/progress-bar-full-dark.png') no-repeat center !important; 
+    position: absolute; /* Position inside the empty bar */
+    top: 0;
+    left: 0;
+ }
+/* --- END LOADING BAR FIX --- */
+
+.main-game-column #unity-warning {
+    position: absolute; 
+    left: 50%; 
+    top: 5%; 
+    transform: translate(-50%); 
+    background: white; 
+    padding: 10px; 
+    display: none; /* Keep hidden initially */
+    z-index: 10; 
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    max-width: 80%; /* Prevent it being too wide */
+    text-align: center;
+}
+
+
+/* === Sidebar Cards (No Changes) === */
+.high-score-card,
+.leaderboard-card,
+.controls-card {
+  background: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  text-align: left;
+}
+/* ... rest of sidebar/leaderboard/controls styles (unchanged) ... */
+.high-score-card h3,
+.leaderboard-card h3,
+.controls-card h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.high-score-card p {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  text-align: center;
+  margin: 0;
+}
+
+#leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 400px; 
+  overflow-y: auto;
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid #eee;
+  font-size: 1.1rem;
+}
+
+.leaderboard-item:last-child {
+  border-bottom: none;
+}
+
+.leaderboard-item span:first-child {
+  font-weight: 600;
+  color: var(--dark-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px; 
+}
+.leaderboard-item span:last-child {
+  font-weight: 700;
+  color: var(--primary-color);
+  flex-shrink: 0; 
+}
+
+.leaderboard-item.top-1 {
+  background-color: #fffbeb; 
+  border-radius: 5px;
+}
+.leaderboard-item.top-2 {
+  background-color: #f0f0f0; 
+  border-radius: 5px;
+}
+.leaderboard-item.top-3 {
+  background-color: #fff0e6; 
+  border-radius: 5px;
+}
+
+.controls-card {
+  padding-bottom: 1rem;
+}
+
+.key-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 1rem 1.5rem;
+}
+
+.key-group {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.key {
+  display: inline-block;
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  box-shadow: 0 2px 0 #ccc;
+  min-width: 40px;
+  text-align: center;
+}
+
+.key-divider {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #999;
+}

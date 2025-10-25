@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re_Flow - River Cleaning NGO</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/donate.css">
+    <link rel="stylesheet" href="/css/game.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/#home" class="nav-logo" data-route="#home">Re_Flow</a>
+            <ul class="nav-menu">
+                <li class="nav-item auth-guest" style="display: block;">
+                    <a href="/#home" class="nav-link" data-route="#home">Home</a>
+                </li>
+                <li class="nav-item auth-required" style="display: none;">
+                    <a href="/#home" class="nav-link" data-route="#home">Home</a>
+                </li>
+                <li class="nav-item auth-required" style="display: none;">
+                    <a href="/#game" class="nav-link" data-route="#game">Game</a>
+                </li>
+                <li class="nav-item auth-required" style="display: none;">
+                    <a href="/#donate" class="nav-link" data-route="#donate">Donate</a>
+                </li>
+                <li class="nav-item auth-guest" style="display: block;">
+                    <a href="/#login" class="nav-link" data-route="#login">Login</a>
+                </li>
+                <li class="nav-item auth-guest" style="display: block;">
+                    <a href="/#signup" class="nav-link" data-route="#signup">Sign Up</a>
+                </li>
+                
+                <li class="nav-item auth-user" style="display: none;">
+                    <span id="nav-username" class="nav-link"></span>
+                    <a href="#" id="logout-button" class="nav-link nav-btn-outline">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="app-container">
+        </main>
+
+    <footer id="footer">
+        <p>&copy; 2025 Re_Flow. All rights reserved. Let's make our rivers clean again.</p>
+    </footer>
+
+    <div id="toast-container"></div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/ui.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/router.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

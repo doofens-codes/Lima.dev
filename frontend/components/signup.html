@@ -1,0 +1,57 @@
+<section id="signup-page" class="page-container auth-page fade-in">
+    <div class="auth-container">
+        <form id="signup-form">
+            <h2>Join Re_Flow</h2>
+            <p>Create an account to get involved and track your impact.</p>
+            
+            <div id="signup-error" class="error-message" style="display: none;"></div>
+            <div id="password-match-error" class="error-message" style="display: none;"></div>
+
+            <div class="input-group">
+                <label for="signup-username">Username</label>
+                <input type="text" id="signup-username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" name="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="signup-password">Password (min 6 chars)</label>
+                <div class="password-wrapper">
+                    <input type="password" id="signup-password" name="password" required>
+                    <span class="password-toggle" data-target="signup-password">
+                        <svg class="icon-eye" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.27c-.31.42-1.223 1.65-2.85 2.72-1.353 1.01-3.13 1.5-4.782 1.5s-3.429-.49-4.782-1.5C2.393 9.92 1.48 8.69 1.173 8q.087-.13.195-.27ZM8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5"/>
+                        </svg>
+                        <svg class="icon-eye-slash hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-4.789 1.667l.708.708a6 6 0 0 1 4.081-1.375C11.643 3.5 14.828 8 14.828 8q0 .13-.01.261l.243.243a13 13 0 0 1-.243-.243ZM.578 3.257l.659.659a13 13 0 0 0-1.66 2.043C.83 7.398 0 8 0 8s3 5.5 8 5.5c1.642 0 3.12-.489 4.385-1.33l.659.659L15.422 15 15 15.422l-1.09-1.09a7 7 0 0 1-4.789 1.667C3.643 16.5 0 12 0 12c.316-.58.855-1.4 1.534-2.319l-1.09-1.09L.578 3.257ZM3.173 9.27c1.137.843 2.56.417 3.582-.12a2.5 2.5 0 0 0-2.835-2.835c-.537 1.02-.96 2.443-.12 3.582M8 5.5a2.5 2.5 0 0 0-2.5 2.5q0 .13.01.261l.524.524a1.5 1.5 0 0 1 2.227-2.227l.524.524q.01-.13.01-.261A2.5 2.5 0 0 0 8 5.5"/>
+                            <path d="m.09.09 1.09 1.09L.09.09Z"/><path d="m14.91 14.91-1.09-1.09 1.09 1.09Z"/>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="confirm-password" name="confirmPassword" required>
+                    <span class="password-toggle" data-target="confirm-password">
+                        <svg class="icon-eye" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.27c-.31.42-1.223 1.65-2.85 2.72-1.353 1.01-3.13 1.5-4.782 1.5s-3.429-.49-4.782-1.5C2.393 9.92 1.48 8.69 1.173 8q.087-.13.195-.27ZM8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5"/>
+                        </svg>
+                        <svg class="icon-eye-slash hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-4.789 1.667l.708.708a6 6 0 0 1 4.081-1.375C11.643 3.5 14.828 8 14.828 8q0 .13-.01.261l.243.243a13 13 0 0 1-.243-.243ZM.578 3.257l.659.659a13 13 0 0 0-1.66 2.043C.83 7.398 0 8 0 8s3 5.5 8 5.5c1.642 0 3.12-.489 4.385-1.33l.659.659L15.422 15 15 15.422l-1.09-1.09a7 7 0 0 1-4.789 1.667C3.643 16.5 0 12 0 12c.316-.58.855-1.4 1.534-2.319l-1.09-1.09L.578 3.257ZM3.173 9.27c1.137.843 2.56.417 3.582-.12a2.5 2.5 0 0 0-2.835-2.835c-.537 1.02-.96 2.443-.12 3.582M8 5.5a2.5 2.5 0 0 0-2.5 2.5q0 .13.01.261l.524.524a1.5 1.5 0 0 1 2.227-2.227l.524.524q.01-.13.01-.261A2.5 2.5 0 0 0 8 5.5"/>
+                            <path d="m.09.09 1.09 1.09L.09.09Z"/><path d="m14.91 14.91-1.09-1.09 1.09 1.09Z"/>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+
+            <button type="submit" class="auth-btn">Create Account</button>
+            <p class="auth-switch">
+                Already have an account? <a href="/#login">Login</a>
+            </p>
+        </form>
+    </div>
+</section>

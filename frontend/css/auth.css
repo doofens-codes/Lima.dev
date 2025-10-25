@@ -1,0 +1,115 @@
+/* ===== Login/Signup Pages ===== */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px - 78px); /* Full height minus nav and footer */
+}
+
+.auth-container {
+    background: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    padding: 2.5rem;
+}
+
+.auth-container h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.auth-container p {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.input-group {
+    margin-bottom: 1.2rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* ===== UPDATED STYLES for Password Toggle ===== */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    /* Add padding to the right to make space for the icon */
+    padding-right: 45px;
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none; /* Prevents text selection */
+    /* Align the SVGs */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style for the SVG icons */
+.password-toggle svg {
+    width: 20px;
+    height: 20px;
+    color: #777; /* Give the icon a neutral color */
+    transition: color 0.2s ease;
+}
+
+.password-toggle:hover svg {
+    color: #333; /* Darken icon on hover */
+}
+
+/* Utility class to hide the icon */
+.password-toggle .hidden {
+    display: none;
+}
+/* ========================================= */
+
+
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: var(--secondary-color);
+    color: var(--white-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.auth-btn:hover {
+    background: #3e8e41;
+}
+
+.auth-switch {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.auth-switch a {
+    font-weight: 700;
+}

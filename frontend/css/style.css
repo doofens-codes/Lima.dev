@@ -1,0 +1,166 @@
+/* ===== Global Styles ===== */
+:root {
+    --primary-color: #006994; /* A deep, watery blue */
+    --secondary-color: #4CAF50; /* A vibrant, nature green */
+    --accent-color: #f9a825; /* A bright, hopeful yellow */
+    --dark-color: #333;
+    --light-color: #f4f4f4;
+    --white-color: #fff;
+    --danger-color: #e74c3c;
+    --success-color: #2ecc71;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    /* Ensure footer stays at the bottom */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main container for all page content */
+#app-container {
+    flex: 1; /* Makes the main content grow to fill space */
+    width: 100%;
+    padding-top: 70px; /* Offset for the fixed navbar */
+}
+
+/* Base class for all pages */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+/* ===== Footer ===== */
+#footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--dark-color);
+    color: var(--white-color);
+    margin-top: auto; /* Pushes to the bottom */
+}
+
+/* ===== Utility Classes ===== */
+.error-message {
+    background: #ffbaba;
+    color: #d8000c;
+    border: 1px solid #d8000c;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+
+
+
+
+/* ===== NEW: Toast Notification Styles (FIXED) ===== */
+
+#toast-container {
+    position: fixed; /* Stays on screen */
+    bottom: 20px;
+    right: 20px;
+    z-index: 2000; /* On top of everything */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: var(--white-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    /* UPDATED: Animation is now JUST the fade-in */
+    animation: toast-fade-in 0.3s ease-out forwards;
+    
+    /* Start transparent and off-screen for the animation */
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+/* Toast types */
+.toast.success {
+    background: var(--secondary-color); /* Green */
+}
+
+.toast.error {
+    background: var(--danger-color); /* Red */
+}
+
+/* Toast icons */
+.toast::before {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.toast.success::before {
+    content: '✓';
+}
+.toast.error::before {
+    content: '!';
+}
+
+/* --- NEW: Hiding Class --- */
+/* JavaScript adds this class to trigger the fade-out */
+.toast.is-hiding {
+    animation: toast-fade-out 0.3s ease-in forwards;
+}
+
+
+/* --- Toast Animations (FIXED) --- */
+@keyframes toast-fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes toast-fade-out {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+}

@@ -1,0 +1,154 @@
+/* ===== Navigation Bar ===== */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--white-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.nav-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Username text */
+#nav-username {
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+/* ===== UPDATED .auth-user class ===== */
+.nav-item.auth-user {
+    /* This was already 'flex', but we're adding
+       align-items and a gap for proper spacing. */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Adds space between "Hi, User" and "Logout" */
+}
+
+
+/* Button styles */
+.nav-btn, .nav-btn-outline {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.nav-btn {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+.nav-btn:hover {
+    background: #00567a;
+    color: var(--white-color);
+}
+
+.nav-btn-outline {
+    border: 2px solid var(--danger-color);
+    color: var(--danger-color);
+}
+
+.nav-btn-outline:hover {
+    background: var(--danger-color);
+    color: var(--white-color);
+}
+
+
+/* ... all your existing navbar.css styles ... */
+
+/* ===== NEW: Style for the active navigation link ===== */
+
+/* Style for the active logo */
+.nav-logo.active {
+    color: var(--primary-color);
+}
+
+/* Style for active text links (Home, Game, Donate, Login) */
+.nav-menu .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 700;
+    /* Add a clean underline */
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 5px; /* Adjust this to look good */
+}
+
+/* Style for the active button (Sign Up) */
+.nav-btn.active {
+    background: #00567a; /* A darker shade of the primary color */
+    transform: scale(0.98); /* Makes it look "pressed" */
+    /* Remove the border-bottom if it's applied from .nav-link.active */
+    border-bottom: none;
+    padding-bottom: 8px; /* Reset to original padding */
+}
+
+/* Ensure the username and logout button don't get the active style */
+.auth-user .nav-link.active {
+    border-bottom: none;
+    padding-bottom: 8px;
+}
+
+/* ... all your existing navbar.css styles ... */
+
+/* ===== NEW: Style for the active navigation link ===== */
+
+/* Style for the active logo */
+.nav-logo.active {
+    color: var(--primary-color);
+}
+
+/* Style for active text links (Home, Game, Donate, Login, and now Signup) */
+.nav-menu .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 700;
+    /* Add a clean underline */
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 5px; /* Adjust this to look good */
+}
+
+/* * UPDATED: We removed the .nav-btn.active style
+ * because "Sign Up" is now a regular .nav-link
+*/
+
+/* Ensure the username and logout button don't get the active style */
+.auth-user .nav-link.active {
+    border-bottom: none;
+    padding-bottom: 8px;
+}
